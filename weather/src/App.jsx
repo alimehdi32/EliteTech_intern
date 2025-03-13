@@ -1,33 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { timeContext } from './context/time'
+import Navbar from './components/Navbar';
+import Weather from './components/Weather';
+import OtherCountries from './components/OtherCountries';
+import Highlight from './components/Highlight';
+import Forecast from './components/Forecast';
 
 function App() {
   const [count, setCount] = useState(0)
+  let [location, setLocation] = useState('New York')
+  const now = new Date();
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <timeContext.Provider value={{ now, count, setCount, location, setLocation }}>
+        <body className='bg-black m-0 p-7'>
+          <Navbar />
+          <div className='flex justify-center items-center gap-6'>
+            <div className='flex flex-col justify-evenly items-center gap-6'>
+              <Weather />
+              <OtherCountries />
+            </div>
+            <div className='flex flex-col justify-evenly items-center gap-6'>
+              <Highlight />
+              <Forecast />
+            </div>
+          </div>
+        </body>
+      </timeContext.Provider>
     </>
   )
 }
