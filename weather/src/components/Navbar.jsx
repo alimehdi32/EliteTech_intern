@@ -1,5 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { timeContext } from '../context/time'
+import Search from './Search';
 
 const Navbar = () => {
   const now = useContext(timeContext).now;
@@ -30,9 +31,7 @@ const Navbar = () => {
         <div>Hi, Alex</div>
         <div className='text-2xl font-bold'>{greet}</div>
       </div>
-      <button className='h-10 w-72 bg-[#0F0F0F] rounded-3xl flex justify-center items-center'>
-       <div className='font-thin opacity-20'>search your location</div>
-      </button>
+      <Search />
     </div>
   )
 }
