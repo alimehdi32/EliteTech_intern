@@ -48,6 +48,7 @@ function App() {
      
      let update = {
         exactloc: weather?.location?.name,
+        exactloca: weather?.location?.country,
         temp: weather?.current?.temperature,
         desc: weather?.current?.weather_descriptions[0],
         icon: weather?.current?.weather_icons[0],
@@ -66,7 +67,7 @@ function App() {
   return (
     <>
       <timeContext.Provider value={{ now, location, setLocation, weather, update}}>
-        <div className='bg-black m-0 p-7'>
+        <div className='bg-black m-0 p-0'>
           <div className='bg-black bg-opacity-80 text-white p-4 flex justify-between items-center'>
           <Navbar />
           <Search />
@@ -76,7 +77,7 @@ function App() {
               <WeatherToday />
               <OtherCountries />
             </div>
-            <div className='flex flex-col justify-evenly items-center gap-6'>
+            <div className='flex flex-col justify-evenly items-center gap-2'>
               <Highlight />
               <Forecast />
             </div>

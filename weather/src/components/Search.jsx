@@ -27,8 +27,8 @@ const Search = () => {
             
             <form onSubmit={handleSubmit(onSubmit)} className='relative pr-5'>
                 {/* register your input into the hook by invoking the "register" function */}
-                <FontAwesomeIcon icon={faMagnifyingGlassLocation} className='transform absolute z-10 right-[365px] top-5 h-5 text-white opacity-60' />
-                <input placeholder='Search your location' type='text' {...register("location", { required: { value: true, message: "Enter location" } })} onChange={handleInputChange} className='bg-[#0F0F0F] h-14 w-60 rounded-l-3xl outline-none pl-11 absolute z-0 right-40' />
+                <FontAwesomeIcon icon={faMagnifyingGlassLocation} className='transform absolute z-10 right-[345px] top-5 h-5 text-white opacity-60' />
+                <input placeholder='Search your location' type='text' {...register("location", { required: { value: true, message: "Enter location" } })} onChange={handleInputChange} className='bg-[#0F0F0F] h-14 w-96 rounded-3xl outline-none pl-11 absolute z-0 right-0' />
                 
             </form>
             
