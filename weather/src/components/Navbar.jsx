@@ -31,7 +31,7 @@ const Navbar = () => {
         <div>Hi, Alex</div>
         <div className='text-2xl font-bold'>{greet}</div>
       </div>
-      <Search />
+     
     </div>
   )
 }
