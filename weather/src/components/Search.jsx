@@ -23,7 +23,7 @@ const Search = () => {
     const onSubmit = newdata => console.log(newdata)
 
     return (
-        <div>
+        <div className='absolute left-[1450px] top-7'>
             
             <form onSubmit={handleSubmit(onSubmit)} className='relative pr-5'>
                 {/* register your input into the hook by invoking the "register" function */}

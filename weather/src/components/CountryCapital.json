@@ -1,0 +1,45 @@
+{
+    "countries": [
+      {
+        "name": "India",
+        "capital": "New Delhi"
+      },
+      {
+        "name": "United States",
+        "capital": "Washington, D.C."
+      },
+      {
+        "name": "France",
+        "capital": "Paris"
+      },
+      {
+        "name": "Japan",
+        "capital": "Tokyo"
+      },
+      {
+        "name": "Australia",
+        "capital": "Canberra"
+      },
+      {
+        "name": "Germany",
+        "capital": "Berlin"
+      },
+      {
+        "name": "Canada",
+        "capital": "Ottawa"
+      },
+      {
+        "name": "Brazil",
+        "capital": "Brasília"
+      },
+      {
+        "name": "South Africa",
+        "capital": "Pretoria"
+      },
+      {
+        "name": "Russia",
+        "capital": "Moscow"
+      }
+    ]
+  }
+  
