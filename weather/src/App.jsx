@@ -14,6 +14,44 @@ function App() {
   const [month, setMonth] = useState();
   const [day, setDay] = useState();
   const [year, setYear] = useState();
+  const WeatherDesc = [
+    {
+      "type": "Sunny",
+      "image": "https://example.com/sunny.jpg"
+    },
+    {
+      "type": "Cloudy",
+      "image": "https://example.com/cloudy.jpg"
+    },
+    {
+      "type": "Rainy",
+      "image": "https://example.com/rainy.jpg"
+    },
+    {
+      "type": "Snowy",
+      "image": "https://example.com/snowy.jpg"
+    },
+    {
+      "type": "Windy",
+      "image": "https://example.com/windy.jpg"
+    },
+    {
+      "type": "Foggy",
+      "image": "https://example.com/foggy.jpg"
+    },
+    {
+      "type": "Thunderstorm",
+      "image": "https://example.com/thunderstorm.jpg"
+    },
+    {
+      "type": "Hazy",
+      "image": "https://example.com/hazy.jpg"
+    },
+    {
+      "type": "Overcast",
+      "image": "https://example.com/overcast.jpg"
+    }
+  ]
   
  /* useMemo(() => {
   let country = []
@@ -39,18 +77,21 @@ function App() {
   const fetchWeatherbylatlon = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://api.weatherstack.com/current?access_key=e58b44ca79974d0267a6585fcd794c7c&query=40.7831,-73.9712`
+        `https://api.weatherstack.com/current?access_key=2860ed06dfae8532937c719d583bba81&query=${lat},${lon}`
       );
       const data = await response.json();
       setWeather(data);
-      setMonth(weather?.location?.localtime.split(' ')[0].split('-')[1])
-      setDay(weather?.location?.localtime.split(' ')[0].split('-')[2])
-      setYear(weather?.location?.localtime.split(' ')[0].split('-')[0])
+      
     } catch (err) {
 
       console.error(err);
     }
-  }, [weather?.location?.localtime]);
+  }, [lat, lon]);
+  useEffect(() => {
+    setMonth(weather?.location?.localtime.split(' ')[0].split('-')[1])
+      setDay(weather?.location?.localtime.split(' ')[0].split('-')[2])
+      setYear(weather?.location?.localtime.split(' ')[0].split('-')[0])
+  }, [weather])
   // Automatically fetch weather when the component mounts
   useEffect(() => {
     fetchWeatherbylatlon(); // Fetch weather data
@@ -58,7 +99,7 @@ function App() {
 
    useEffect(() => {
       if(location){
-        fetch(`https://api.weatherstack.com/current?access_key=e58b44ca79974d0267a6585fcd794c7c&query=${location}`)
+        fetch(`https://api.weatherstack.com/current?access_key=2860ed06dfae8532937c719d583bba81&query=${location}`)
         .then(response => response.json())
         .then(data => setWeather(data))
     }
@@ -89,11 +130,11 @@ function App() {
      temp.push(weather?.current?.temperature)
      feelslike.push(weather?.current?.feelslike)
      
-  }, [weather, city, country, desc, feelslike, temp])
-  console.log(weather)*/
+  }, [weather, city, country, desc, feelslike, temp])*/
+  console.log(weather)
   return (
     <>
-      <timeContext.Provider value={{ now, location, setLocation, weather, update, month, day, year, currentTime }}>
+      <timeContext.Provider value={{ now, location, setLocation, weather, update, month, day, year, currentTime, WeatherDesc }}>
         <div className='bg-black m-0 p-0 pb-5 overflow-hidden'>
           <div className='bg-black bg-opacity-80 text-white p-4 flex justify-between items-center relative'>
             <Navbar />
