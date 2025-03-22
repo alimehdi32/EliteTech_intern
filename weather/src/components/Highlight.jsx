@@ -26,7 +26,7 @@ const Highlight = () => {
                     <div className="flex justify-center items-center gap-3">
                         <div className='h-32 w-32 flex flex-col justify-between items-center p-2 rounded-3xl bg-black'>
                             <h1 className='text-white text-base'>Wind Status</h1>
-                            <h1 className='text-white text-xl flex gap-1 relative bottom-3'><div className='absolute right-2'>{update.wind}</div> <p className='text-white text-xs absolute top-2'>Km/h</p></h1>
+                            <h1 className='text-white text-xl flex gap-1 relative bottom-3 mr-0 pr-0'><div className='absolute right-2'>{update.wind}</div> <p className='text-white text-xs absolute top-2'>Km/h</p></h1>
                             <h1 className='text-white text-xl'>{currentTime}</h1>
                         </div>
                         <div className='h-32 w-32 flex flex-col justify-between items-center p-2 rounded-3xl bg-black'>
@@ -43,7 +43,7 @@ const Highlight = () => {
                         </div>
                         <div className='h-32 w-32 flex flex-col justify-between items-center p-2 rounded-3xl bg-black'>
                         <h1 className='text-white text-base'>Visibility</h1>
-                            <h1 className='text-white text-xl flex gap-1 relative bottom-3'><div className='absolute right-2'>{update.visibility}</div> <p className='text-white text-xs absolute top-2'>Km/h</p></h1>
+                            <h1 className='text-white text-xl flex gap-1 relative bottom-3'><div className='absolute right-2'>{update.visibility}</div> <p className='text-white text-xs absolute top-2'>Km</p></h1>
                             <h1 className='text-white text-xl'>{currentTime}</h1>
                         </div>
                     </div>

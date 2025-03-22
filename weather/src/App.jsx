@@ -77,11 +77,11 @@ function App() {
   const fetchWeatherbylatlon = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://api.weatherstack.com/current?access_key=2860ed06dfae8532937c719d583bba81&query=${lat},${lon}`
+        `https://api.weatherstack.com/current?access_key=0addbdbcdcebcc314fe58e126b983e33&query=${lat},${lon}`
       );
       const data = await response.json();
       setWeather(data);
-      
+      setLocation(data.location.name)
     } catch (err) {
 
       console.error(err);
@@ -99,7 +99,7 @@ function App() {
 
    useEffect(() => {
       if(location){
-        fetch(`https://api.weatherstack.com/current?access_key=2860ed06dfae8532937c719d583bba81&query=${location}`)
+        fetch(`https://api.weatherstack.com/current?access_key=0addbdbcdcebcc314fe58e126b983e33&query=${location}`)
         .then(response => response.json())
         .then(data => setWeather(data))
     }
